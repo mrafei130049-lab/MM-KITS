@@ -1,573 +1,88 @@
+/*========================================
+  PRODUCT CATALOG
+========================================*/
 
-      /*========================================
-        RESET & BASE
-      ========================================*/
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+.catalog {
+  max-width: 1300px;
+  margin: 80px auto;
+  padding: 0 30px;
+  text-align: center;
+}
 
-      html {
-        scroll-behavior: smooth;
-      }
+.catalog h2 {
+  font-size: 40px;
+  color: #0055ff;
+  margin-bottom: 20px;
+}
 
-      body {
-        font-family: "Vazirmatn", sans-serif;
-        direction: rtl;
-        background: #0a0a0a;
-        color: #ffffff;
-        line-height: 1.9;
-        overflow-x: hidden;
-      }
+.catalog > p {
+  color: #a0a0a0;
+  margin-bottom: 45px;
+  font-size: 18px;
+}
 
-      /*========================================
-        SCROLLBAR
-      ========================================*/
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
+.catalog-box {
+  display: flex;
+  justify-content: center;
+}
 
-      ::-webkit-scrollbar-track {
-        background: #0a0a0a;
-      }
+.catalog-card {
+  width: 100%;
+  max-width: 650px;
 
-      ::-webkit-scrollbar-thumb {
-        background: #0055ff;
-        border-radius: 10px;
-      }
+  background: rgba(0, 85, 255, 0.05);
 
-      ::-webkit-scrollbar-thumb:hover {
-        background: #0044cc;
-      }
+  backdrop-filter: blur(12px);
 
-      /*========================================
-        HEADER / NAVBAR
-      ========================================*/
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        backdrop-filter: blur(18px);
-        background: rgba(10, 10, 10, 0.95);
-        border-bottom: 2px solid #0055ff;
-      }
+  border: 1px solid rgba(0, 85, 255, 0.15);
 
-      .navbar {
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 18px 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+  border-radius: 25px;
 
-      .logo {
-        font-size: 30px;
-        color: #0055ff;
-        font-weight: 800;
-      }
+  padding: 40px;
 
-      .navbar ul {
-        display: flex;
-        list-style: none;
-        gap: 35px;
-      }
+  transition: 0.4s;
+}
 
-      .navbar a {
-        text-decoration: none;
-        color: #ffffff;
-        font-weight: 500;
-        transition: 0.35s;
-        position: relative;
-      }
+.catalog-card:hover {
+  transform: translateY(-10px);
 
-      .navbar a::after {
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        right: 0;
-        width: 0;
-        height: 3px;
-        background: #0055ff;
-        transition: 0.35s;
-      }
+  background: rgba(0, 85, 255, 0.12);
 
-      .navbar a:hover {
-        color: #0055ff;
-      }
+  border-color: #0055ff;
 
-      .navbar a:hover::after {
-        width: 100%;
-      }
+  box-shadow: 0 20px 40px rgba(0, 85, 255, 0.15);
+}
 
-      /*========================================
-        BUTTON
-      ========================================*/
-      .btn {
-        display: inline-block;
-        padding: 15px 35px;
-        background: linear-gradient(135deg, #0055ff, #0033aa);
-        border-radius: 15px;
-        color: #ffffff;
-        font-size: 18px;
-        text-decoration: none;
-        transition: 0.35s;
-        box-shadow: 0 15px 35px rgba(0, 85, 255, 0.4);
-        border: none;
-        cursor: pointer;
-        font-weight: 700;
-      }
+.catalog-card i {
+  font-size: 55px;
 
-      .btn:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 45px rgba(0, 85, 255, 0.6);
-        background: linear-gradient(135deg, #0066ff, #0044cc);
-      }
+  color: #0055ff;
 
-      /*========================================
-        HERO
-      ========================================*/
-      .hero {
-        max-width: 1300px;
-        margin: 0 auto;
-        padding: 80px 30px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        gap: 70px;
-      }
+  margin-bottom: 20px;
+}
 
-      .hero-text h2 {
-        font-size: 55px;
-        margin-bottom: 20px;
-        line-height: 1.3;
-        color: #ffffff;
-      }
+.catalog-card h3 {
+  color: #fff;
 
-      .hero-text h2 span {
-        color: #0055ff;
-      }
+  font-size: 26px;
 
-      .hero-text p {
-        font-size: 20px;
-        color: #a0a0a0;
-        margin-bottom: 35px;
-      }
+  margin-bottom: 15px;
+}
 
-      .hero-image {
-        display: flex;
-        justify-content: center;
-      }
+.catalog-card p {
+  color: #a0a0a0;
 
-      .hero-image img {
-        width: 350px;
-        height: 350px;
-        object-fit: cover;
-        border-radius: 30px;
-        background: rgba(0, 85, 255, 0.1);
-        padding: 20px;
-        border: 2px solid #0055ff;
-        box-shadow: 0 20px 50px rgba(0, 85, 255, 0.2);
-        transition: 0.4s;
-      }
+  line-height: 1.8;
+}
 
-      .hero-image img:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 30px 60px rgba(0, 85, 255, 0.3);
-      }
+.catalog-buttons {
+  margin-top: 30px;
 
-      /*========================================
-        ABOUT
-      ========================================*/
-      .about {
-        max-width: 1300px;
-        margin: 80px auto;
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        gap: 50px;
-        align-items: center;
-        padding: 40px;
-        background: rgba(0, 85, 255, 0.05);
-        border: 1px solid rgba(0, 85, 255, 0.2);
-        border-radius: 25px;
-      }
+  display: flex;
 
-      .about img {
-        width: 250px;
-        display: block;
-        margin: 0 auto;
-        border-radius: 20px;
-        border: 2px solid #0055ff;
-      }
+  justify-content: center;
 
-      .about h2 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        color: #0055ff;
-      }
+  gap: 20px;
 
-      .about p {
-        color: #c0c0c0;
-        font-size: 18px;
-        text-align: justify;
-      }
-
-      /*========================================
-        FOUNDER
-      ========================================*/
-      .founder {
-        max-width: 1300px;
-        margin: 80px auto;
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: 50px;
-        align-items: center;
-        padding: 40px;
-        background: rgba(0, 85, 255, 0.03);
-        border-radius: 25px;
-        border: 1px solid rgba(0, 85, 255, 0.15);
-      }
-
-      .founder img {
-        width: 100%;
-        max-width: 280px;
-        border-radius: 50%;
-        display: block;
-        margin: 0 auto;
-        border: 4px solid #0055ff;
-        box-shadow: 0 20px 50px rgba(0, 85, 255, 0.2);
-      }
-
-      .founder h2 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        color: #0055ff;
-      }
-
-      .founder p {
-        color: #c0c0c0;
-        font-size: 18px;
-        text-align: justify;
-      }
-
-      /*========================================
-        FEATURES / CARDS
-      ========================================*/
-      .features {
-        max-width: 1300px;
-        margin: 80px auto;
-        text-align: center;
-        padding: 0 30px;
-      }
-
-      .features > h2 {
-        font-size: 40px;
-        color: #0055ff;
-        margin-bottom: 50px;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-      }
-
-      .card {
-        background: rgba(0, 85, 255, 0.05);
-        backdrop-filter: blur(12px);
-        padding: 35px 25px;
-        border-radius: 25px;
-        border: 1px solid rgba(0, 85, 255, 0.15);
-        transition: 0.4s;
-      }
-
-      .card:hover {
-        transform: translateY(-10px);
-        background: rgba(0, 85, 255, 0.12);
-        border-color: #0055ff;
-        box-shadow: 0 20px 40px rgba(0, 85, 255, 0.15);
-      }
-
-      .card i {
-        font-size: 50px;
-        color: #0055ff;
-        margin-bottom: 20px;
-      }
-
-      .card h3 {
-        font-size: 22px;
-        margin-bottom: 12px;
-        color: #ffffff;
-      }
-
-      .card p {
-        color: #a0a0a0;
-        font-size: 16px;
-      }
-
-      /*========================================
-        CTA
-      ========================================*/
-      .cta {
-        max-width: 1300px;
-        margin: 80px auto;
-        text-align: center;
-        padding: 60px 30px;
-        background: linear-gradient(
-          135deg,
-          rgba(0, 85, 255, 0.08),
-          rgba(0, 51, 170, 0.05)
-        );
-        border-radius: 25px;
-        border: 2px solid rgba(0, 85, 255, 0.2);
-      }
-
-      .cta h2 {
-        font-size: 38px;
-        margin-bottom: 30px;
-        color: #ffffff;
-      }
-
-      .cta h2 span {
-        color: #0055ff;
-      }
-
-      /*========================================
-        CONTACT
-      ========================================*/
-      .contact {
-        max-width: 700px;
-        margin: 80px auto;
-        padding: 0 30px;
-        text-align: center;
-      }
-
-      .contact h2 {
-        font-size: 36px;
-        color: #0055ff;
-        margin-bottom: 30px;
-      }
-
-      .contact form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      .contact input,
-      .contact textarea {
-        padding: 16px 20px;
-        border-radius: 16px;
-        border: 2px solid rgba(0, 85, 255, 0.2);
-        background: rgba(0, 85, 255, 0.05);
-        color: #ffffff;
-        font-size: 16px;
-        font-family: inherit;
-        transition: 0.3s;
-        outline: none;
-      }
-
-      .contact input::placeholder,
-      .contact textarea::placeholder {
-        color: #666666;
-      }
-
-      .contact input:focus,
-      .contact textarea:focus {
-        border-color: #0055ff;
-        background: rgba(0, 85, 255, 0.1);
-        box-shadow: 0 0 20px rgba(0, 85, 255, 0.1);
-      }
-
-      .contact textarea {
-        min-height: 150px;
-        resize: vertical;
-      }
-
-      .contact button {
-        padding: 16px;
-        border: none;
-        border-radius: 16px;
-        background: linear-gradient(135deg, #0055ff, #0033aa);
-        color: #ffffff;
-        font-size: 18px;
-        font-weight: 700;
-        cursor: pointer;
-        transition: 0.3s;
-        font-family: inherit;
-      }
-
-      .contact button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 35px rgba(0, 85, 255, 0.4);
-        background: linear-gradient(135deg, #0066ff, #0044cc);
-      }
-
-      /*========================================
-        FOOTER
-      ========================================*/
-      footer {
-        text-align: center;
-        padding: 40px 20px;
-        color: #666666;
-        border-top: 2px solid rgba(0, 85, 255, 0.2);
-        margin-top: 40px;
-      }
-
-      footer p span {
-        color: #0055ff;
-      }
-
-      /*========================================
-        RESPONSIVE
-      ========================================*/
-      @media (max-width: 1024px) {
-        .cards {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .hero-text h2 {
-          font-size: 42px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        /* Navbar */
-        .navbar {
-          flex-direction: column;
-          gap: 15px;
-          padding: 15px 20px;
-        }
-
-        .navbar ul {
-          gap: 20px;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .logo {
-          font-size: 24px;
-        }
-
-        /* Hero */
-        .hero {
-          grid-template-columns: 1fr;
-          text-align: center;
-          padding: 50px 20px;
-          gap: 40px;
-        }
-
-        .hero-text h2 {
-          font-size: 32px;
-        }
-
-        .hero-text p {
-          font-size: 17px;
-        }
-
-        .hero-image img {
-          width: 250px;
-          height: 250px;
-        }
-
-        /* About */
-        .about {
-          grid-template-columns: 1fr;
-          text-align: center;
-          margin: 40px 15px;
-          padding: 25px;
-        }
-
-        .about img {
-          width: 180px;
-        }
-
-        .about h2 {
-          font-size: 28px;
-        }
-
-        .about p {
-          text-align: center;
-        }
-
-        /* Founder */
-        .founder {
-          grid-template-columns: 1fr;
-          text-align: center;
-          margin: 40px 15px;
-          padding: 25px;
-        }
-
-        .founder img {
-          max-width: 200px;
-        }
-
-        .founder h2 {
-          font-size: 28px;
-        }
-
-        .founder p {
-          text-align: center;
-        }
-
-        /* Features */
-        .cards {
-          grid-template-columns: 1fr 1fr;
-          gap: 20px;
-        }
-
-        .features > h2 {
-          font-size: 30px;
-        }
-
-        .card {
-          padding: 25px 18px;
-        }
-
-        .card i {
-          font-size: 36px;
-        }
-
-        /* CTA */
-        .cta h2 {
-          font-size: 28px;
-        }
-
-        /* Contact */
-        .contact h2 {
-          font-size: 28px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .hero-text h2 {
-          font-size: 26px;
-        }
-
-        .cards {
-          grid-template-columns: 1fr;
-        }
-
-        .navbar ul {
-          gap: 12px;
-        }
-
-        .navbar a {
-          font-size: 14px;
-        }
-
-        .btn {
-          padding: 12px 25px;
-          font-size: 15px;
-        }
-
-        .hero {
-          padding: 30px 15px;
-        }
-
-        .hero-image img {
-          width: 200px;
-          height: 200px;
-        }
-      }
+  flex-wrap: wrap;
+}
