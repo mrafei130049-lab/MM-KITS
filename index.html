@@ -1,19 +1,15 @@
-```html
 <!doctype html>
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>کیت موتوری هیبرید | Mansouri Kit</title>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-
     <link rel="stylesheet" href="style2.css" />
   </head>
-
   <body>
     <!-- ====== TOPBAR ====== -->
     <header class="topbar">
@@ -21,14 +17,12 @@
         <i class="fa-solid fa-arrow-right"></i>
         بازگشت به صفحه اصلی
       </a>
-
       <div class="cart-top" onclick="toggleCart()">
         <i class="fa-solid fa-cart-shopping"></i>
         <span>سبد خرید</span>
         <span class="cart-count" id="cartCount">0</span>
       </div>
     </header>
-
     <!-- ====== PRODUCT PAGE ====== -->
     <main class="product-page">
       <!-- ====== GALLERY ====== -->
@@ -38,14 +32,12 @@
             <i class="fa-solid fa-circle-xmark"></i>
             ناموجود
           </span>
-
           <img
             id="currentImage"
             src="DysYn_nl7XqmMlqPsgMLU.png"
             alt="کیت موتوری هیبرید"
           />
         </div>
-
         <div class="thumbs">
           <img
             src="عکس قطعات کیت.png"
@@ -53,21 +45,13 @@
             class="active"
             onclick="changeImage(this)"
           />
-
-          <img
-            src="پوستر محصول.png"
-            alt=""
-            onclick="changeImage(this)"
-          />
+          <img src="پوستر محصول.png" alt="" onclick="changeImage(this)" />
         </div>
       </section>
-
       <!-- ====== INFO ====== -->
       <section class="info">
         <span class="badge">محصول ویژه</span>
-
         <h1>کیت موتوری هیبرید</h1>
-
         <div class="rating">
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
@@ -76,117 +60,84 @@
           <i class="fa-solid fa-star-half-stroke"></i>
           <span>4.8 از 5</span>
         </div>
-
         <!-- ====== STOCK STATUS ====== -->
         <div class="stock-status">
           <i class="fa-solid fa-circle"></i>
           <span>ناموجود - به زودی موجود می‌شود</span>
         </div>
-
         <p class="short-desc">
           کیت موتوری هیبرید مناسب علاقه‌مندان به الکترونیک و مکانیک؛ طراحی‌شده
           با قطعات باکیفیت و مناسب برای پروژه‌های آموزشی و حرفه‌ای.
         </p>
-
         <div class="price-box">
           <div class="old-price">۳۵,۰۰۰,۰۰۰ تومان</div>
           <div class="price" id="productPrice">۳۰,۰۰۰,۰۰۰ تومان</div>
           <div class="discount">۱۴٪ تخفیف</div>
         </div>
-
         <!-- ====== ویژگی‌ها ====== -->
         <div class="features">
           <h2>ویژگی‌های محصول</h2>
-
           <ul>
             <li>
-              <i class="fa-solid fa-check"></i>
-              مصرف بسیار پایین و سازگار با محیط زیست
+              <i class="fa-solid fa-check"></i> مصرف بسیار پایین و سازگار با
+              محیط زیست
             </li>
-
             <li>
-              <i class="fa-solid fa-check"></i>
-              سیستم سوخت ترکیبی بنزین و آب
+              <i class="fa-solid fa-check"></i> سیستم سوخت ترکیبی بنزین و آب
             </li>
-
+            <li><i class="fa-solid fa-check"></i> راه‌اندازی و نصب آسان</li>
             <li>
-              <i class="fa-solid fa-check"></i>
-              راه‌اندازی و نصب آسان
+              <i class="fa-solid fa-check"></i> مناسب پروژه‌های آموزشی و
+              تحقیقاتی
             </li>
-
             <li>
-              <i class="fa-solid fa-check"></i>
-              مناسب پروژه‌های آموزشی و تحقیقاتی
-            </li>
-
-            <li>
-              <i class="fa-solid fa-check"></i>
-              کیفیت ساخت بالا و قطعات مرغوب
+              <i class="fa-solid fa-check"></i> کیفیت ساخت بالا و قطعات مرغوب
             </li>
           </ul>
         </div>
-
         <div class="actions">
           <button class="buy-btn" id="addToCartBtn" disabled>
             <i class="fa-solid fa-ban"></i>
             ناموجود
           </button>
-
-          <button
-            class="notify-btn"
-            id="notifyBtn"
-            onclick="notifyMe()"
-          >
+          <button class="notify-btn" id="notifyBtn" onclick="notifyMe()">
             <i class="fa-regular fa-bell"></i>
             به من اطلاع بده
           </button>
-
-          <button
-            class="fav-btn"
-            id="favBtn"
-            onclick="toggleFav()"
-          >
+          <button class="fav-btn" id="favBtn" onclick="toggleFav()">
             <i class="fa-regular fa-heart"></i>
           </button>
         </div>
-
         <a href="#specs" class="spec-link">
           مشاهده مشخصات کامل
           <i class="fa-solid fa-arrow-down"></i>
         </a>
       </section>
     </main>
-
     <!-- ====== SPECS ====== -->
     <section class="specs" id="specs">
       <h2>مشخصات فنی</h2>
-
       <div class="spec-grid">
         <div class="spec-item">
           <span>نوع محصول</span>
           <strong>کیت موتوری هیبرید</strong>
         </div>
-
         <div class="spec-item">
           <span>کاربرد</span>
           <strong>آموزشی و تحقیقاتی</strong>
         </div>
-
         <div class="spec-item">
           <span>کیفیت ساخت</span>
           <strong>درجه یک</strong>
         </div>
-
         <div class="spec-item">
           <span>نصب</span>
           <strong>آسان</strong>
         </div>
-
         <div class="spec-item">
           <span>گارانتی</span>
           <strong>تضمین کیفیت</strong>
         </div>
-
         <div class="spec-item">
           <span>وضعیت</span>
           <strong class="out-of-stock-status">
@@ -196,62 +147,41 @@
         </div>
       </div>
     </section>
-
     <!-- ====== CART OVERLAY ====== -->
-    <div
-      class="cart-overlay"
-      id="cartOverlay"
-      onclick="toggleCart()"
-    ></div>
-
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
     <!-- ====== CART SIDEBAR ====== -->
     <div class="cart-sidebar" id="cartSidebar">
       <div class="cart-header">
-        <h2>
-          <i class="fa-solid fa-cart-shopping"></i>
-          سبد خرید
-        </h2>
-
+        <h2><i class="fa-solid fa-cart-shopping"></i> سبد خرید</h2>
         <button class="cart-close" onclick="toggleCart()">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
-
       <div class="cart-items" id="cartItems">
         <div class="cart-empty">
           <i class="fa-solid fa-basket-shopping"></i>
           <p>سبد خرید خالی است</p>
         </div>
       </div>
-
       <div class="cart-footer">
         <div class="cart-total">
           <span>جمع کل:</span>
           <span id="cartTotal">۰ تومان</span>
         </div>
-
-        <button
-          class="checkout-btn"
-          id="checkoutBtn"
-          disabled
-        >
-          <i class="fa-solid fa-credit-card"></i>
-          پرداخت و تکمیل خرید
+        <button class="checkout-btn" id="checkoutBtn" disabled>
+          <i class="fa-solid fa-credit-card"></i> پرداخت و تکمیل خرید
         </button>
       </div>
     </div>
-
     <!-- ====== TOAST ====== -->
     <div class="toast" id="toast">
       <i class="fa-solid fa-check-circle"></i>
       <span id="toastMessage">پیام</span>
     </div>
-
     <!-- ====== FOOTER ====== -->
     <footer class="footer">
       <p>© 2027 Mansouri Kit</p>
     </footer>
-
     <!-- ====== SCRIPT ====== -->
     <script>
       // ---- Product Data ----
@@ -261,13 +191,11 @@
         price: 30000000,
         priceFormatted: "۳۰,۰۰۰,۰۰۰ تومان",
         image: "DysYn_nl7XqmMlqPsgMLU.png",
-        inStock: false,
+        inStock: false, // 👈 محصول ناموجود
       };
-
       // ---- Cart State ----
       let cart = [];
       let isCartOpen = false;
-
       // ---- DOM Elements ----
       const cartItemsEl = document.getElementById("cartItems");
       const cartTotalEl = document.getElementById("cartTotal");
@@ -280,49 +208,34 @@
       const toastMessage = document.getElementById("toastMessage");
       const cartSidebar = document.getElementById("cartSidebar");
       const cartOverlay = document.getElementById("cartOverlay");
-
       // ---- Image Gallery ----
       function changeImage(el) {
         document.getElementById("currentImage").src = el.src;
-
         document
           .querySelectorAll(".thumbs img")
           .forEach((img) => img.classList.remove("active"));
-
         el.classList.add("active");
       }
-
       // ---- Toast Notification ----
       let toastTimeout;
-
       function showToast(message, isWarning = false) {
         toastMessage.textContent = message;
-
         const icon = toast.querySelector("i");
-
         if (isWarning) {
-          icon.className =
-            "fa-solid fa-triangle-exclamation warning";
+          icon.className = "fa-solid fa-triangle-exclamation warning";
         } else {
-          icon.className =
-            "fa-solid fa-check-circle";
+          icon.className = "fa-solid fa-check-circle";
         }
-
         toast.classList.add("show");
-
         clearTimeout(toastTimeout);
-
         toastTimeout = setTimeout(() => {
           toast.classList.remove("show");
         }, 3000);
       }
-
       // ---- Toggle Favorite ----
       function toggleFav() {
         favBtn.classList.toggle("liked");
-
         const icon = favBtn.querySelector("i");
-
         if (favBtn.classList.contains("liked")) {
           icon.className = "fa-solid fa-heart";
           showToast("❤️ به علاقه‌مندی‌ها اضافه شد");
@@ -330,56 +243,31 @@
           icon.className = "fa-regular fa-heart";
         }
       }
-
       // ---- Notify Me ----
       function notifyMe() {
         if (notifyBtn.classList.contains("notified")) {
           notifyBtn.classList.remove("notified");
-
-          notifyBtn.innerHTML =
-            '<i class="fa-regular fa-bell"></i> به من اطلاع بده';
-
+          notifyBtn.innerHTML = `<i class="fa-regular fa-bell"></i> به من اطلاع بده`;
           showToast("❌ از لیست اطلاع‌رسانی حذف شدید");
         } else {
           notifyBtn.classList.add("notified");
-
-          notifyBtn.innerHTML =
-            '<i class="fa-solid fa-check"></i> ثبت شد!';
-
-          showToast(
-            "🔔 با موجود شدن محصول به شما اطلاع داده می‌شود",
-            true
-          );
+          notifyBtn.innerHTML = `<i class="fa-solid fa-check"></i> ثبت شد!`;
+          showToast("🔔 با موجود شدن محصول به شما اطلاع داده می‌شود", true);
         }
       }
-
       // ---- Toggle Cart ----
       function toggleCart() {
         isCartOpen = !isCartOpen;
-
-        cartSidebar.classList.toggle(
-          "open",
-          isCartOpen
-        );
-
-        cartOverlay.classList.toggle(
-          "show",
-          isCartOpen
-        );
-
-        document.body.style.overflow =
-          isCartOpen ? "hidden" : "";
+        cartSidebar.classList.toggle("open", isCartOpen);
+        cartOverlay.classList.toggle("show", isCartOpen);
+        document.body.style.overflow = isCartOpen ? "hidden" : "";
       }
-
       // ---- Render Cart ----
       function renderCart() {
-        const emptyState = `
-          <div class="cart-empty">
+        const emptyState = `<div class="cart-empty">
             <i class="fa-solid fa-basket-shopping"></i>
             <p>سبد خرید خالی است</p>
-          </div>
-        `;
-
+          </div>`;
         if (cart.length === 0) {
           cartItemsEl.innerHTML = emptyState;
           cartTotalEl.textContent = "۰ تومان";
@@ -387,97 +275,63 @@
           cartCountEl.textContent = "0";
           return;
         }
-
         let html = "";
         let total = 0;
-
         cart.forEach((item, index) => {
           const itemTotal = item.price * item.qty;
           total += itemTotal;
-
           html += `
-            <div class="cart-item">
-              <img src="${item.image}" alt="${item.name}" />
-
-              <div class="cart-item-info">
-                <h4>${item.name}</h4>
-
-                <div class="item-price">
-                  ${item.price.toLocaleString()} تومان
+              <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}" />
+                <div class="cart-item-info">
+                  <h4>${item.name}</h4>
+                  <div class="item-price">${item.price.toLocaleString()} تومان</div>
+                  <div class="cart-item-qty">
+                    <button onclick="updateQty(${index}, -1)">−</button>
+                    <span>${item.qty}</span>
+                    <button onclick="updateQty(${index}, 1)">+</button>
+                  </div>
                 </div>
-
-                <div class="cart-item-qty">
-                  <button onclick="updateQty(${index}, -1)">
-                    −
-                  </button>
-
-                  <span>${item.qty}</span>
-
-                  <button onclick="updateQty(${index}, 1)">
-                    +
-                  </button>
-                </div>
+                <button class="cart-item-remove" onclick="removeItem(${index})">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
               </div>
-
-              <button
-                class="cart-item-remove"
-                onclick="removeItem(${index})"
-              >
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          `;
+            `;
         });
-
         cartItemsEl.innerHTML = html;
-
-        cartTotalEl.textContent =
-          total.toLocaleString() + " تومان";
-
+        cartTotalEl.textContent = total.toLocaleString() + " تومان";
         checkoutBtn.disabled = false;
-
-        cartCountEl.textContent =
-          cart.reduce((sum, i) => sum + i.qty, 0);
+        cartCountEl.textContent = cart.reduce((sum, i) => sum + i.qty, 0);
       }
-
       // ---- Update Quantity ----
       function updateQty(index, change) {
         if (cart[index].qty + change <= 0) {
           removeItem(index);
           return;
         }
-
         cart[index].qty += change;
-
         renderCart();
         saveCart();
       }
-
       // ---- Remove Item ----
       function removeItem(index) {
         cart.splice(index, 1);
-
         renderCart();
         saveCart();
-
         if (cart.length === 0) {
           showToast("🛒 سبد خرید خالی شد");
         } else {
           showToast("🗑️ محصول از سبد خرید حذف شد");
         }
       }
-
+      // ---- Add to Cart (غیرفعال - محصول ناموجود) ----
+      // تابع addToCart غیرفعال شده چون محصول ناموجود است
       // ---- Save/Load Cart ----
       function saveCart() {
-        localStorage.setItem(
-          "cart",
-          JSON.stringify(cart)
-        );
+        localStorage.setItem("cart", JSON.stringify(cart));
       }
-
       function loadCart() {
         const saved = localStorage.getItem("cart");
-
         if (saved) {
           try {
             cart = JSON.parse(saved);
@@ -487,66 +341,40 @@
           }
         }
       }
-
       // ---- Checkout ----
-      checkoutBtn.addEventListener(
-        "click",
-        function () {
-          if (cart.length === 0) return;
-
-          const total = cart.reduce(
-            (sum, i) => sum + i.price * i.qty,
-            0
-          );
-
-          showToast(
-            "🧾 سفارش شما با مبلغ " +
-              total.toLocaleString() +
-              " تومان ثبت شد! ممنون از خرید شما 🙏"
-          );
-
-          cart = [];
-
-          renderCart();
-          saveCart();
-          toggleCart();
-        }
-      );
-
+      checkoutBtn.addEventListener("click", function () {
+        if (cart.length === 0) return;
+        const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+        showToast(
+          "🧾 سفارش شما با مبلغ " +
+            total.toLocaleString() +
+            " تومان ثبت شد! ممنون از خرید شما 🙏",
+        );
+        cart = [];
+        renderCart();
+        saveCart();
+        toggleCart();
+      });
       // ---- Init ----
       loadCart();
-
       // ---- Close cart with ESC ----
-      document.addEventListener(
-        "keydown",
-        function (e) {
-          if (
-            e.key === "Escape" &&
-            isCartOpen
-          ) {
-            toggleCart();
-          }
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && isCartOpen) {
+          toggleCart();
         }
-      );
+      });
+      // ---- Disable add to cart on load ----
+      // دکمه افزودن به سبد خرید قبلاً با disabled غیرفعال شده
     </script>
 
-    <!-- ====== ACCESSIBILITY WIDGET ====== -->
+    <!-- ====== Accessibility Widget (acsbapp) ====== -->
     <script>
-      (function () {
-        var s = document.createElement("script");
-        var h =
-          document.querySelector("head") ||
-          document.body;
-
-        s.src =
-          "https://acsbapp.com/apps/app/dist/js/app.js";
-
+      (function(){
+        var s = document.createElement('script');
+        var h = document.querySelector('head') || document.body;
+        s.src = 'https://acsbapp.com/apps/app/dist/js/app.js';
         s.async = true;
-
-        s.onload = function () {
-          acsbJS.init();
-        };
-
+        s.onload = function(){ acsbJS.init(); };
         h.appendChild(s);
       })();
     </script>
