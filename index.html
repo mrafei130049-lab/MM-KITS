@@ -1,166 +1,554 @@
+```html
 <!doctype html>
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mansouri Kit</title>
+    <title>کیت موتوری هیبرید | Mansouri Kit</title>
 
-    <!-- ====== FONTS ====== -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style2.css" />
   </head>
 
   <body>
-    <!-- ====== HEADER ====== -->
-    <header>
-      <nav class="navbar">
-        <h1 class="logo">⚒️ Mansouri Kit</h1>
-        <ul>
-          <li><a href="#">خانه</a></li>
-          <li><a href="kit.html">کیت‌ها</a></li>
-          <li><a href="#catalog">کاتالوگ محصولات</a></li>
-          <li><a href="#contact">تماس با ما</a></li>
-        </ul>
-      </nav>
+    <!-- ====== TOPBAR ====== -->
+    <header class="topbar">
+      <a href="index.html" class="back-link">
+        <i class="fa-solid fa-arrow-right"></i>
+        بازگشت به صفحه اصلی
+      </a>
+
+      <div class="cart-top" onclick="toggleCart()">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>سبد خرید</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
     </header>
 
-    <!-- ====== HERO ====== -->
-    <section class="hero">
-      <div class="hero-text">
-        <h2>آینده را با <span>دستان خودت</span> بساز</h2>
-        <p>کیت‌های آموزشی الکترونیک، مکانیک و رباتیک برای عاشقان تکنولوژی</p>
-        <a href="kit.html" class="btn">مشاهده محصولات</a>
-      </div>
-      <div class="hero-image">
-        <img
-          src="ChatGPT Image ۲۲ خرداد ۱۴۰۵، ۱۸_۴۱_۱۹.png"
-          alt="Mansouri Kit"
-        />
-      </div>
-    </section>
+    <!-- ====== PRODUCT PAGE ====== -->
+    <main class="product-page">
+      <!-- ====== GALLERY ====== -->
+      <section class="gallery">
+        <div class="main-image">
+          <span class="out-of-stock-badge">
+            <i class="fa-solid fa-circle-xmark"></i>
+            ناموجود
+          </span>
 
-    <!-- ====== ABOUT ====== -->
-    <section class="about">
-      <div class="about-image">
-        <img
-          src="ChatGPT Image ۲۲ خرداد ۱۴۰۵، ۱۸_۴۱_۱۹.png"
-          alt="About Mansouri Kit"
-        />
-      </div>
-      <div class="about-text">
-        <h2>درباره ما</h2>
-        <p>
-          برند منصوری کیت در سال ۱۴۰۰ با چشم‌انداز توانمندسازی علاقه‌مندان به
-          حوزه تکنولوژی فعالیت خود را آغاز نمود. رسالت اصلی این مجموعه طراحی و
-          تولید کیت‌های الکترومکانیکی با بهره‌گیری از مرغوب‌ترین قطعات و
-          جدیدترین فناوری‌ها است. هدف ما ایجاد بستری برای یادگیری عملی، نوآوری و
-          توسعه مهارت‌های فنی است.
+          <img
+            id="currentImage"
+            src="DysYn_nl7XqmMlqPsgMLU.png"
+            alt="کیت موتوری هیبرید"
+          />
+        </div>
+
+        <div class="thumbs">
+          <img
+            src="عکس قطعات کیت.png"
+            alt=""
+            class="active"
+            onclick="changeImage(this)"
+          />
+
+          <img
+            src="پوستر محصول.png"
+            alt=""
+            onclick="changeImage(this)"
+          />
+        </div>
+      </section>
+
+      <!-- ====== INFO ====== -->
+      <section class="info">
+        <span class="badge">محصول ویژه</span>
+
+        <h1>کیت موتوری هیبرید</h1>
+
+        <div class="rating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+          <span>4.8 از 5</span>
+        </div>
+
+        <!-- ====== STOCK STATUS ====== -->
+        <div class="stock-status">
+          <i class="fa-solid fa-circle"></i>
+          <span>ناموجود - به زودی موجود می‌شود</span>
+        </div>
+
+        <p class="short-desc">
+          کیت موتوری هیبرید مناسب علاقه‌مندان به الکترونیک و مکانیک؛ طراحی‌شده
+          با قطعات باکیفیت و مناسب برای پروژه‌های آموزشی و حرفه‌ای.
         </p>
+
+        <div class="price-box">
+          <div class="old-price">۳۵,۰۰۰,۰۰۰ تومان</div>
+          <div class="price" id="productPrice">۳۰,۰۰۰,۰۰۰ تومان</div>
+          <div class="discount">۱۴٪ تخفیف</div>
+        </div>
+
+        <!-- ====== ویژگی‌ها ====== -->
+        <div class="features">
+          <h2>ویژگی‌های محصول</h2>
+
+          <ul>
+            <li>
+              <i class="fa-solid fa-check"></i>
+              مصرف بسیار پایین و سازگار با محیط زیست
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              سیستم سوخت ترکیبی بنزین و آب
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              راه‌اندازی و نصب آسان
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              مناسب پروژه‌های آموزشی و تحقیقاتی
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              کیفیت ساخت بالا و قطعات مرغوب
+            </li>
+          </ul>
+        </div>
+
+        <div class="actions">
+          <button class="buy-btn" id="addToCartBtn" disabled>
+            <i class="fa-solid fa-ban"></i>
+            ناموجود
+          </button>
+
+          <button
+            class="notify-btn"
+            id="notifyBtn"
+            onclick="notifyMe()"
+          >
+            <i class="fa-regular fa-bell"></i>
+            به من اطلاع بده
+          </button>
+
+          <button
+            class="fav-btn"
+            id="favBtn"
+            onclick="toggleFav()"
+          >
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+
+        <a href="#specs" class="spec-link">
+          مشاهده مشخصات کامل
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+      </section>
+    </main>
+
+    <!-- ====== SPECS ====== -->
+    <section class="specs" id="specs">
+      <h2>مشخصات فنی</h2>
+
+      <div class="spec-grid">
+        <div class="spec-item">
+          <span>نوع محصول</span>
+          <strong>کیت موتوری هیبرید</strong>
+        </div>
+
+        <div class="spec-item">
+          <span>کاربرد</span>
+          <strong>آموزشی و تحقیقاتی</strong>
+        </div>
+
+        <div class="spec-item">
+          <span>کیفیت ساخت</span>
+          <strong>درجه یک</strong>
+        </div>
+
+        <div class="spec-item">
+          <span>نصب</span>
+          <strong>آسان</strong>
+        </div>
+
+        <div class="spec-item">
+          <span>گارانتی</span>
+          <strong>تضمین کیفیت</strong>
+        </div>
+
+        <div class="spec-item">
+          <span>وضعیت</span>
+          <strong class="out-of-stock-status">
+            <i class="fa-solid fa-circle-xmark"></i>
+            ناموجود
+          </strong>
+        </div>
       </div>
     </section>
 
-    <!-- ====== FOUNDER ====== -->
-    <section class="founder">
-      <div>
-        <img
-          src="3d-construction-worker-character-presenting-to-the-right-pose-free-png.png"
-          alt="محمد منصوری - بنیان‌گذار"
-        />
-      </div>
-      <div>
-        <h2>بنیان‌گذار</h2>
-        <p>
-          محمد منصوری هستم، دنیای الکترونیک و مکانیک همیشه برای من
-          فراتر از یک علاقه بوده است. تلاش من تولید محصولاتی است که هم آموزش
-          باشند و هم تجربه واقعی مهندسی را در اختیار کاربران قرار دهند.
-        </p>
-      </div>
-    </section>
+    <!-- ====== CART OVERLAY ====== -->
+    <div
+      class="cart-overlay"
+      id="cartOverlay"
+      onclick="toggleCart()"
+    ></div>
 
-    <!-- ====== FEATURES ====== -->
-    <section class="features">
-      <h2>چرا Mansouri Kit؟</h2>
-      <div class="cards">
-        <div class="card">
-          <i class="fa-solid fa-microchip"></i>
-          <h3>کیفیت بالا</h3>
-          <p>استفاده از بهترین قطعات الکترومکانیکی</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-gear"></i>
-          <h3>طراحی مهندسی</h3>
-          <p>طراحی شده بر اساس نیاز واقعی کاربران</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-graduation-cap"></i>
-          <h3>آموزش کامل</h3>
-          <p>همراه با آموزش و مستندات کامل</p>
-        </div>
-        <div class="card">
-          <i class="fa-solid fa-money-bill-wave"></i>
-          <h3>قیمت اقتصادی</h3>
-          <p>بهترین کیفیت با مناسب‌ترین قیمت</p>
+    <!-- ====== CART SIDEBAR ====== -->
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>
+          <i class="fa-solid fa-cart-shopping"></i>
+          سبد خرید
+        </h2>
+
+        <button class="cart-close" onclick="toggleCart()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="cart-items" id="cartItems">
+        <div class="cart-empty">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <p>سبد خرید خالی است</p>
         </div>
       </div>
-    </section>
 
-    <!-- ====== PRODUCT CATALOG ====== -->
-    <section id="catalog" class="catalog">
-      <h2>کاتالوگ محصولات</h2>
-      <p>
-        برای مشاهده مشخصات کامل محصولات، فایل کاتالوگ را به صورت آنلاین مشاهده
-        کنید یا نسخه PDF را دانلود نمایید.
-      </p>
-      <div class="catalog-box">
-        <div class="catalog-card">
-          <i class="fa-solid fa-book-open"></i>
-          <h3>کاتالوگ Mansouri Kit</h3>
-          <p>معرفی کامل محصولات، مشخصات فنی و اطلاعات مورد نیاز مشتریان.</p>
-          <div class="catalog-buttons">
-            <a
-              href="کیت موتوری هیبرید =کاتالوگ (2).pdf"
-              target="_blank"
-              class="btn"
-            >
-              مشاهده آنلاین
-            </a>
-            <a href="کیت موتوری هیبرید =کاتالوگ (2).pdf" download class="btn">
-              دانلود PDF
-            </a>
-          </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>جمع کل:</span>
+          <span id="cartTotal">۰ تومان</span>
         </div>
+
+        <button
+          class="checkout-btn"
+          id="checkoutBtn"
+          disabled
+        >
+          <i class="fa-solid fa-credit-card"></i>
+          پرداخت و تکمیل خرید
+        </button>
       </div>
-    </section>
+    </div>
 
-    <!-- ====== CTA ====== -->
-    <section class="cta">
-      <h2>آماده‌ای اولین کیت خودت را بسازی؟</h2>
-      <a href="kit.html" class="btn">ورود به فروشگاه</a>
-    </section>
-
-    <!-- ====== CONTACT ====== -->
-    <section id="contact" class="contact">
-      <h2>تماس با ما</h2>
-      <form>
-        <input type="text" placeholder="نام" />
-        <input type="email" placeholder="ایمیل" />
-        <textarea placeholder="پیام"></textarea>
-        <button type="submit">ارسال پیام</button>
-      </form>
-    </section>
+    <!-- ====== TOAST ====== -->
+    <div class="toast" id="toast">
+      <i class="fa-solid fa-check-circle"></i>
+      <span id="toastMessage">پیام</span>
+    </div>
 
     <!-- ====== FOOTER ====== -->
-    <footer>
-      <p>© 2027 <span>Mansouri Kit</span></p>
+    <footer class="footer">
+      <p>© 2027 Mansouri Kit</p>
     </footer>
+
+    <!-- ====== SCRIPT ====== -->
+    <script>
+      // ---- Product Data ----
+      const product = {
+        id: 1,
+        name: "کیت موتوری هیبرید",
+        price: 30000000,
+        priceFormatted: "۳۰,۰۰۰,۰۰۰ تومان",
+        image: "DysYn_nl7XqmMlqPsgMLU.png",
+        inStock: false,
+      };
+
+      // ---- Cart State ----
+      let cart = [];
+      let isCartOpen = false;
+
+      // ---- DOM Elements ----
+      const cartItemsEl = document.getElementById("cartItems");
+      const cartTotalEl = document.getElementById("cartTotal");
+      const cartCountEl = document.getElementById("cartCount");
+      const checkoutBtn = document.getElementById("checkoutBtn");
+      const addToCartBtn = document.getElementById("addToCartBtn");
+      const notifyBtn = document.getElementById("notifyBtn");
+      const favBtn = document.getElementById("favBtn");
+      const toast = document.getElementById("toast");
+      const toastMessage = document.getElementById("toastMessage");
+      const cartSidebar = document.getElementById("cartSidebar");
+      const cartOverlay = document.getElementById("cartOverlay");
+
+      // ---- Image Gallery ----
+      function changeImage(el) {
+        document.getElementById("currentImage").src = el.src;
+
+        document
+          .querySelectorAll(".thumbs img")
+          .forEach((img) => img.classList.remove("active"));
+
+        el.classList.add("active");
+      }
+
+      // ---- Toast Notification ----
+      let toastTimeout;
+
+      function showToast(message, isWarning = false) {
+        toastMessage.textContent = message;
+
+        const icon = toast.querySelector("i");
+
+        if (isWarning) {
+          icon.className =
+            "fa-solid fa-triangle-exclamation warning";
+        } else {
+          icon.className =
+            "fa-solid fa-check-circle";
+        }
+
+        toast.classList.add("show");
+
+        clearTimeout(toastTimeout);
+
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove("show");
+        }, 3000);
+      }
+
+      // ---- Toggle Favorite ----
+      function toggleFav() {
+        favBtn.classList.toggle("liked");
+
+        const icon = favBtn.querySelector("i");
+
+        if (favBtn.classList.contains("liked")) {
+          icon.className = "fa-solid fa-heart";
+          showToast("❤️ به علاقه‌مندی‌ها اضافه شد");
+        } else {
+          icon.className = "fa-regular fa-heart";
+        }
+      }
+
+      // ---- Notify Me ----
+      function notifyMe() {
+        if (notifyBtn.classList.contains("notified")) {
+          notifyBtn.classList.remove("notified");
+
+          notifyBtn.innerHTML =
+            '<i class="fa-regular fa-bell"></i> به من اطلاع بده';
+
+          showToast("❌ از لیست اطلاع‌رسانی حذف شدید");
+        } else {
+          notifyBtn.classList.add("notified");
+
+          notifyBtn.innerHTML =
+            '<i class="fa-solid fa-check"></i> ثبت شد!';
+
+          showToast(
+            "🔔 با موجود شدن محصول به شما اطلاع داده می‌شود",
+            true
+          );
+        }
+      }
+
+      // ---- Toggle Cart ----
+      function toggleCart() {
+        isCartOpen = !isCartOpen;
+
+        cartSidebar.classList.toggle(
+          "open",
+          isCartOpen
+        );
+
+        cartOverlay.classList.toggle(
+          "show",
+          isCartOpen
+        );
+
+        document.body.style.overflow =
+          isCartOpen ? "hidden" : "";
+      }
+
+      // ---- Render Cart ----
+      function renderCart() {
+        const emptyState = `
+          <div class="cart-empty">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <p>سبد خرید خالی است</p>
+          </div>
+        `;
+
+        if (cart.length === 0) {
+          cartItemsEl.innerHTML = emptyState;
+          cartTotalEl.textContent = "۰ تومان";
+          checkoutBtn.disabled = true;
+          cartCountEl.textContent = "0";
+          return;
+        }
+
+        let html = "";
+        let total = 0;
+
+        cart.forEach((item, index) => {
+          const itemTotal = item.price * item.qty;
+          total += itemTotal;
+
+          html += `
+            <div class="cart-item">
+              <img src="${item.image}" alt="${item.name}" />
+
+              <div class="cart-item-info">
+                <h4>${item.name}</h4>
+
+                <div class="item-price">
+                  ${item.price.toLocaleString()} تومان
+                </div>
+
+                <div class="cart-item-qty">
+                  <button onclick="updateQty(${index}, -1)">
+                    −
+                  </button>
+
+                  <span>${item.qty}</span>
+
+                  <button onclick="updateQty(${index}, 1)">
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <button
+                class="cart-item-remove"
+                onclick="removeItem(${index})"
+              >
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          `;
+        });
+
+        cartItemsEl.innerHTML = html;
+
+        cartTotalEl.textContent =
+          total.toLocaleString() + " تومان";
+
+        checkoutBtn.disabled = false;
+
+        cartCountEl.textContent =
+          cart.reduce((sum, i) => sum + i.qty, 0);
+      }
+
+      // ---- Update Quantity ----
+      function updateQty(index, change) {
+        if (cart[index].qty + change <= 0) {
+          removeItem(index);
+          return;
+        }
+
+        cart[index].qty += change;
+
+        renderCart();
+        saveCart();
+      }
+
+      // ---- Remove Item ----
+      function removeItem(index) {
+        cart.splice(index, 1);
+
+        renderCart();
+        saveCart();
+
+        if (cart.length === 0) {
+          showToast("🛒 سبد خرید خالی شد");
+        } else {
+          showToast("🗑️ محصول از سبد خرید حذف شد");
+        }
+      }
+
+      // ---- Save/Load Cart ----
+      function saveCart() {
+        localStorage.setItem(
+          "cart",
+          JSON.stringify(cart)
+        );
+      }
+
+      function loadCart() {
+        const saved = localStorage.getItem("cart");
+
+        if (saved) {
+          try {
+            cart = JSON.parse(saved);
+            renderCart();
+          } catch (e) {
+            cart = [];
+          }
+        }
+      }
+
+      // ---- Checkout ----
+      checkoutBtn.addEventListener(
+        "click",
+        function () {
+          if (cart.length === 0) return;
+
+          const total = cart.reduce(
+            (sum, i) => sum + i.price * i.qty,
+            0
+          );
+
+          showToast(
+            "🧾 سفارش شما با مبلغ " +
+              total.toLocaleString() +
+              " تومان ثبت شد! ممنون از خرید شما 🙏"
+          );
+
+          cart = [];
+
+          renderCart();
+          saveCart();
+          toggleCart();
+        }
+      );
+
+      // ---- Init ----
+      loadCart();
+
+      // ---- Close cart with ESC ----
+      document.addEventListener(
+        "keydown",
+        function (e) {
+          if (
+            e.key === "Escape" &&
+            isCartOpen
+          ) {
+            toggleCart();
+          }
+        }
+      );
+    </script>
+
+    <!-- ====== ACCESSIBILITY WIDGET ====== -->
+    <script>
+      (function () {
+        var s = document.createElement("script");
+        var h =
+          document.querySelector("head") ||
+          document.body;
+
+        s.src =
+          "https://acsbapp.com/apps/app/dist/js/app.js";
+
+        s.async = true;
+
+        s.onload = function () {
+          acsbJS.init();
+        };
+
+        h.appendChild(s);
+      })();
+    </script>
   </body>
 </html>
