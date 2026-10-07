@@ -1,15 +1,19 @@
+```html
 <!doctype html>
 <html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>کیت موتوری هیبرید | Mansouri Kit</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
+
     <link rel="stylesheet" href="style2.css" />
   </head>
+
   <body>
     <!-- ====== TOPBAR ====== -->
     <header class="topbar">
@@ -34,6 +38,7 @@
             <i class="fa-solid fa-circle-xmark"></i>
             ناموجود
           </span>
+
           <img
             id="currentImage"
             src="DysYn_nl7XqmMlqPsgMLU.png"
@@ -48,7 +53,12 @@
             class="active"
             onclick="changeImage(this)"
           />
-          <img src="پوستر محصول.png" alt="" onclick="changeImage(this)" />
+
+          <img
+            src="پوستر محصول.png"
+            alt=""
+            onclick="changeImage(this)"
+          />
         </div>
       </section>
 
@@ -87,21 +97,31 @@
         <!-- ====== ویژگی‌ها ====== -->
         <div class="features">
           <h2>ویژگی‌های محصول</h2>
+
           <ul>
             <li>
-              <i class="fa-solid fa-check"></i> مصرف بسیار پایین و سازگار با
-              محیط زیست
+              <i class="fa-solid fa-check"></i>
+              مصرف بسیار پایین و سازگار با محیط زیست
             </li>
+
             <li>
-              <i class="fa-solid fa-check"></i> سیستم سوخت ترکیبی بنزین و آب
+              <i class="fa-solid fa-check"></i>
+              سیستم سوخت ترکیبی بنزین و آب
             </li>
-            <li><i class="fa-solid fa-check"></i> راه‌اندازی و نصب آسان</li>
+
             <li>
-              <i class="fa-solid fa-check"></i> مناسب پروژه‌های آموزشی و
-              تحقیقاتی
+              <i class="fa-solid fa-check"></i>
+              راه‌اندازی و نصب آسان
             </li>
+
             <li>
-              <i class="fa-solid fa-check"></i> کیفیت ساخت بالا و قطعات مرغوب
+              <i class="fa-solid fa-check"></i>
+              مناسب پروژه‌های آموزشی و تحقیقاتی
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              کیفیت ساخت بالا و قطعات مرغوب
             </li>
           </ul>
         </div>
@@ -112,12 +132,20 @@
             ناموجود
           </button>
 
-          <button class="notify-btn" id="notifyBtn" onclick="notifyMe()">
+          <button
+            class="notify-btn"
+            id="notifyBtn"
+            onclick="notifyMe()"
+          >
             <i class="fa-regular fa-bell"></i>
             به من اطلاع بده
           </button>
 
-          <button class="fav-btn" id="favBtn" onclick="toggleFav()">
+          <button
+            class="fav-btn"
+            id="favBtn"
+            onclick="toggleFav()"
+          >
             <i class="fa-regular fa-heart"></i>
           </button>
         </div>
@@ -170,12 +198,20 @@
     </section>
 
     <!-- ====== CART OVERLAY ====== -->
-    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div
+      class="cart-overlay"
+      id="cartOverlay"
+      onclick="toggleCart()"
+    ></div>
 
     <!-- ====== CART SIDEBAR ====== -->
     <div class="cart-sidebar" id="cartSidebar">
       <div class="cart-header">
-        <h2><i class="fa-solid fa-cart-shopping"></i> سبد خرید</h2>
+        <h2>
+          <i class="fa-solid fa-cart-shopping"></i>
+          سبد خرید
+        </h2>
+
         <button class="cart-close" onclick="toggleCart()">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -193,8 +229,14 @@
           <span>جمع کل:</span>
           <span id="cartTotal">۰ تومان</span>
         </div>
-        <button class="checkout-btn" id="checkoutBtn" disabled>
-          <i class="fa-solid fa-credit-card"></i> پرداخت و تکمیل خرید
+
+        <button
+          class="checkout-btn"
+          id="checkoutBtn"
+          disabled
+        >
+          <i class="fa-solid fa-credit-card"></i>
+          پرداخت و تکمیل خرید
         </button>
       </div>
     </div>
@@ -219,7 +261,7 @@
         price: 30000000,
         priceFormatted: "۳۰,۰۰۰,۰۰۰ تومان",
         image: "DysYn_nl7XqmMlqPsgMLU.png",
-        inStock: false, // 👈 محصول ناموجود
+        inStock: false,
       };
 
       // ---- Cart State ----
@@ -242,9 +284,11 @@
       // ---- Image Gallery ----
       function changeImage(el) {
         document.getElementById("currentImage").src = el.src;
+
         document
           .querySelectorAll(".thumbs img")
           .forEach((img) => img.classList.remove("active"));
+
         el.classList.add("active");
       }
 
@@ -253,14 +297,21 @@
 
       function showToast(message, isWarning = false) {
         toastMessage.textContent = message;
+
         const icon = toast.querySelector("i");
+
         if (isWarning) {
-          icon.className = "fa-solid fa-triangle-exclamation warning";
+          icon.className =
+            "fa-solid fa-triangle-exclamation warning";
         } else {
-          icon.className = "fa-solid fa-check-circle";
+          icon.className =
+            "fa-solid fa-check-circle";
         }
+
         toast.classList.add("show");
+
         clearTimeout(toastTimeout);
+
         toastTimeout = setTimeout(() => {
           toast.classList.remove("show");
         }, 3000);
@@ -269,7 +320,9 @@
       // ---- Toggle Favorite ----
       function toggleFav() {
         favBtn.classList.toggle("liked");
+
         const icon = favBtn.querySelector("i");
+
         if (favBtn.classList.contains("liked")) {
           icon.className = "fa-solid fa-heart";
           showToast("❤️ به علاقه‌مندی‌ها اضافه شد");
@@ -282,29 +335,50 @@
       function notifyMe() {
         if (notifyBtn.classList.contains("notified")) {
           notifyBtn.classList.remove("notified");
-          notifyBtn.innerHTML = `<i class="fa-regular fa-bell"></i> به من اطلاع بده`;
+
+          notifyBtn.innerHTML =
+            '<i class="fa-regular fa-bell"></i> به من اطلاع بده';
+
           showToast("❌ از لیست اطلاع‌رسانی حذف شدید");
         } else {
           notifyBtn.classList.add("notified");
-          notifyBtn.innerHTML = `<i class="fa-solid fa-check"></i> ثبت شد!`;
-          showToast("🔔 با موجود شدن محصول به شما اطلاع داده می‌شود", true);
+
+          notifyBtn.innerHTML =
+            '<i class="fa-solid fa-check"></i> ثبت شد!';
+
+          showToast(
+            "🔔 با موجود شدن محصول به شما اطلاع داده می‌شود",
+            true
+          );
         }
       }
 
       // ---- Toggle Cart ----
       function toggleCart() {
         isCartOpen = !isCartOpen;
-        cartSidebar.classList.toggle("open", isCartOpen);
-        cartOverlay.classList.toggle("show", isCartOpen);
-        document.body.style.overflow = isCartOpen ? "hidden" : "";
+
+        cartSidebar.classList.toggle(
+          "open",
+          isCartOpen
+        );
+
+        cartOverlay.classList.toggle(
+          "show",
+          isCartOpen
+        );
+
+        document.body.style.overflow =
+          isCartOpen ? "hidden" : "";
       }
 
       // ---- Render Cart ----
       function renderCart() {
-        const emptyState = `<div class="cart-empty">
+        const emptyState = `
+          <div class="cart-empty">
             <i class="fa-solid fa-basket-shopping"></i>
             <p>سبد خرید خالی است</p>
-          </div>`;
+          </div>
+        `;
 
         if (cart.length === 0) {
           cartItemsEl.innerHTML = emptyState;
@@ -322,28 +396,48 @@
           total += itemTotal;
 
           html += `
-              <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}" />
-                <div class="cart-item-info">
-                  <h4>${item.name}</h4>
-                  <div class="item-price">${item.price.toLocaleString()} تومان</div>
-                  <div class="cart-item-qty">
-                    <button onclick="updateQty(${index}, -1)">−</button>
-                    <span>${item.qty}</span>
-                    <button onclick="updateQty(${index}, 1)">+</button>
-                  </div>
+            <div class="cart-item">
+              <img src="${item.image}" alt="${item.name}" />
+
+              <div class="cart-item-info">
+                <h4>${item.name}</h4>
+
+                <div class="item-price">
+                  ${item.price.toLocaleString()} تومان
                 </div>
-                <button class="cart-item-remove" onclick="removeItem(${index})">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
+
+                <div class="cart-item-qty">
+                  <button onclick="updateQty(${index}, -1)">
+                    −
+                  </button>
+
+                  <span>${item.qty}</span>
+
+                  <button onclick="updateQty(${index}, 1)">
+                    +
+                  </button>
+                </div>
               </div>
-            `;
+
+              <button
+                class="cart-item-remove"
+                onclick="removeItem(${index})"
+              >
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          `;
         });
 
         cartItemsEl.innerHTML = html;
-        cartTotalEl.textContent = total.toLocaleString() + " تومان";
+
+        cartTotalEl.textContent =
+          total.toLocaleString() + " تومان";
+
         checkoutBtn.disabled = false;
-        cartCountEl.textContent = cart.reduce((sum, i) => sum + i.qty, 0);
+
+        cartCountEl.textContent =
+          cart.reduce((sum, i) => sum + i.qty, 0);
       }
 
       // ---- Update Quantity ----
@@ -352,7 +446,9 @@
           removeItem(index);
           return;
         }
+
         cart[index].qty += change;
+
         renderCart();
         saveCart();
       }
@@ -360,8 +456,10 @@
       // ---- Remove Item ----
       function removeItem(index) {
         cart.splice(index, 1);
+
         renderCart();
         saveCart();
+
         if (cart.length === 0) {
           showToast("🛒 سبد خرید خالی شد");
         } else {
@@ -369,16 +467,17 @@
         }
       }
 
-      // ---- Add to Cart (غیرفعال - محصول ناموجود) ----
-      // تابع addToCart غیرفعال شده چون محصول ناموجود است
-
       // ---- Save/Load Cart ----
       function saveCart() {
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem(
+          "cart",
+          JSON.stringify(cart)
+        );
       }
 
       function loadCart() {
         const saved = localStorage.getItem("cart");
+
         if (saved) {
           try {
             cart = JSON.parse(saved);
@@ -390,32 +489,67 @@
       }
 
       // ---- Checkout ----
-      checkoutBtn.addEventListener("click", function () {
-        if (cart.length === 0) return;
-        const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-        showToast(
-          "🧾 سفارش شما با مبلغ " +
-            total.toLocaleString() +
-            " تومان ثبت شد! ممنون از خرید شما 🙏",
-        );
-        cart = [];
-        renderCart();
-        saveCart();
-        toggleCart();
-      });
+      checkoutBtn.addEventListener(
+        "click",
+        function () {
+          if (cart.length === 0) return;
+
+          const total = cart.reduce(
+            (sum, i) => sum + i.price * i.qty,
+            0
+          );
+
+          showToast(
+            "🧾 سفارش شما با مبلغ " +
+              total.toLocaleString() +
+              " تومان ثبت شد! ممنون از خرید شما 🙏"
+          );
+
+          cart = [];
+
+          renderCart();
+          saveCart();
+          toggleCart();
+        }
+      );
 
       // ---- Init ----
       loadCart();
 
       // ---- Close cart with ESC ----
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && isCartOpen) {
-          toggleCart();
+      document.addEventListener(
+        "keydown",
+        function (e) {
+          if (
+            e.key === "Escape" &&
+            isCartOpen
+          ) {
+            toggleCart();
+          }
         }
-      });
+      );
+    </script>
 
-      // ---- Disable add to cart on load ----
-      // دکمه افزودن به سبد خرید قبلاً با disabled غیرفعال شده
+    <!-- ====== ACCESSIBILITY WIDGET ====== -->
+    <script>
+      (function () {
+        var s = document.createElement("script");
+        var h =
+          document.querySelector("head") ||
+          document.body;
+
+        s.src =
+          "https://acsbapp.com/apps/app/dist/js/app.js";
+
+        s.async = true;
+
+        s.onload = function () {
+          acsbJS.init();
+        };
+
+        h.appendChild(s);
+      })();
     </script>
   </body>
 </html>
+```
